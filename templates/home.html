@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Emotion Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+
+        body {
+            background: url("../static/images/face_balloons.jpg")no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-size: cover;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .jumbotron h1 {
+            color: rgb(79,79,79);
+        }
+
+
+        .jumbotron {
+            background: rgb(233, 236, 239); /* This is for ie8 and below */
+            background: rgba(233, 236, 239, 0.8);
+            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+        }
+
+        #footerBanner {
+            background: rgb(233, 236, 239); /* This is for ie8 and below */
+            background: rgba(233, 236, 239, 0.8);
+            width: 100%;
+            position:absolute static;
+            padding-top: 5px;
+        }
+
+        #submitButton {
+            margin-top: 10px;
+            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+        }
+
+        .card border-light {
+            margin: 500px, 100px, 5px, 10px !important;
+            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+        }
+        .card {
+            background: rgba(233, 236, 239, 0.80);
+            opacity: 0.8;
+        }
+        .card-header, .card-footer (
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-4"><strong>Emotion Classifier</strong></h1>
+            <p class="lead">Tell us how you are feeling and we will predict your emotion.</p>
+            <p class="">Link to project on <a class="link-secondary" target="_blank" rel="noopener noreferrer"  href="https://github.com/kanderson0521">GitHub </a> </p>
+            <hr class="my-4">
+            <p class="lead">{% include 'result.html' %} </p>
+        </div>
+    </div>
+
+    <div class="card border-light mb-3 p-3 mb-2 mx-auto bg-white text-dark" style="width: 50%">
+        <form action="/predict" method="POST">
+            <div class="form-group" id="text_form">
+                <!-- <label for="input_text">Type in the box below & hit the submit button to generate the predicted emotion. We do not store input data. </label> -->
+                <textarea class="form-control" type="text" name="input_text" id="input_text" maxlength="128" placeholder="Put some text here (up to 128 characters)..." rows="5" required></textarea>
+                <button type="submit" value="submit" class="btn btn-secondary pull-right" id="submitButton"><strong>Submit</strong></button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="page-footer font-small fixed-bottom text-center" id="footerBanner" href="#">
+
+        <div class="footer-copyright text-center py-3">
+            &#169 2022 Copyright
+            <a href="https://github.com/kanderson0521" class="link-secondary"> www.emotion-detection-classifier.heroku.com </a>
+        </div>
+    </footer>
+
+
+</body>
+</html>
