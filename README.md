@@ -4,4 +4,6 @@ A web app built with Python and Flask that can generate predictions based on use
 https://www.kaggle.com/praveengovi/emotions-dataset-for-nlp?select=train.txt
 
 Compared Naïve Bayes and SVM results using different vectorization techniques and parameters to find the best model; achieved 87% accuracy with SVM (Linear) using TF-IDF vectorization. Also built a CNN but did not achieve higher results on the validation and test set (83%).
-Currently working to create Docker container and deploy.
+
+The app is running on heroku, try it out!
+https://devcenter.heroku.com/articles/heroku-cli
