@@ -1,7 +1,14 @@
 import pickle
+import os
 from flask import Flask, request, render_template
+import nltk
 from nltk import word_tokenize
 from nltk import WordNetLemmatizer
+
+# TODO - Check if these are located in folder, if not, then download. Runs too slow. /usr/nltk/...?
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 # Load in model and tfidf vec
 with open('./data/emotion_clf_svm_v1.pkl', 'rb') as model_file:
@@ -39,4 +46,5 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
