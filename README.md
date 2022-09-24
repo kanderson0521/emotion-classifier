@@ -8,4 +8,4 @@ Compared Naïve Bayes and SVM results using different vectorization techniques a
 I deployed the Flask app using a docker image hosted on Heroku, try it out!
 https://emotion-detection-classifier.herokuapp.com
 
-<h5>Heroku link no longer works, Heroku removed free app hosting. </h5>
+<h5>Heroku link may eventually stop working, Heroku is removing free app hosting. </h5>
